@@ -1,1 +1,120 @@
-Hello Traversable
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+    <title>ElelPHPant\Traversable</title>
+</head>
+<body class="d-flex flex-column h-100">
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">ElePHPant\Traversable</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#map">Map</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#learn-more">
+                         Learn more
+                    </a>
+                </li><li class="nav-item dropdown">
+                <a class="nav-link" href="#host">
+                    Become a Host
+                </a>
+            </li>
+            </ul>
+            <!--form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form-->
+          </div>
+    </nav>
+    </header>
+    <main class="flexible-shrink-0 container" style="padding-top:60px;" role="main">
+
+    <div class="" id="home">
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to the home of the traveling ElePHPant!</h1>
+            <p class="lead">Traversable is a pink elePHPant trying to see as much of the world as possible. Help him to get around!</p>
+            <a class="btn btn-primary btn-lg" href="#learn-more" role="button">Learn more</a>
+        </div>
+    </div>
+        <div id="map" class="jumbotron">
+            <div style="height:40em;"></div>
+        </div>
+    <div id="learn-more"></div>
+    <div id="host">
+        <div class="jumbotron">
+        <h2>You want to help Traversable see more of the world?</h2>
+            <p><a href="mailto:traversable@heigl.org">Send us an Email</a> in which you tell us a bit about yourself and we'll add you to the list of people Traversable will visit eventually</p>
+        <p>Please make sure that the email contains the following information: </p>
+        <ul><li>
+            Your Name
+        </li><li>
+            Where you are based (roughtly. We do not need your address)
+        </li><li>
+            Social accounts that we should track to get informatios about your encounters with Traversable
+        </li></ul>
+    </div>
+    </div>
+    </main>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+            integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+            crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
+    <script type="text/javascript">
+        var mymap = L.map('map').setView([0.0, 0.0], 2);
+        L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+            maxZoom: 18
+        }).addTo(mymap);
+
+        var gpx = '/traversable.gpx'; // URL to your GPX file or the GPX itself
+        new L.GPX(gpx, {
+            async: true,
+            marker_options: {
+                startIconUrl: '',
+                endIconUrl: '',
+                shadowUrl: ''
+            }
+        }).on('loaded', function(e) {
+            mymap.fitBounds(e.target.getBounds());
+        }).addTo(mymap);
+
+        var hosts = new L.GPX('/hosts.gpx', {
+            async: true,
+            marker_options : {
+                iconSize : [25, 41],
+                shadowSize: [41, 41],
+                shadowUrl: 'https://unpkg.com/leaflet@1.5.1/dist/images/marker-shadow.png',
+                wptIconUrls : {
+                    '' : 'https://unpkg.com/leaflet@1.5.1/dist/images/marker-icon.png'
+                }
+            }
+        }).on('loaded', function(g) {
+
+        }).addTo(mymap);
+
+    </script>
+</body>
+</html>
