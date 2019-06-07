@@ -11,6 +11,10 @@
         <trkpt lat="44.820556" lon="20.462222">
             <time>2019-05-25T12:00:00Z</time>
         </trkpt>
+        <trkpt lat="53.217222" lon="6.574722">
+            <time>2019-06-06T19:00:00Z</time>
+          <name>GroningenPHP</name>
+      </trkpt>
     </trkseg>
   </trk>
 </gpx>
