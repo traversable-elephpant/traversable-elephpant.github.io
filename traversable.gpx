@@ -20,6 +20,14 @@
         <time>2019-06-07T12:00:00Z</time>
         <name>Dutch PHPConference</name>
       </trkpt>
+      <trkpt lat="52.1525" lon="5.386944">
+        <time>2019-06-11T12:00:00Z</time>
+        <name>PHPAmersfoort</name>
+      </trkpt>
+      <trkpt>
+        <time>2019-06-20T12:00:00Z</time>
+        <name>WordCamp Europe</name>
+      </trkpt>
     </trkseg>
   </trk>
 </gpx>
