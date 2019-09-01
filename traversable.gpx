@@ -28,6 +28,22 @@
         <time>2019-06-20T12:00:00Z</time>
         <name>WordCamp Europe</name>
       </trkpt>
+      <trkpt lat="47.37174" lon="8.54226">
+        <time>2019-06-22T12:00:00Z</time>
+        <name>Zürich</name>
+      </trkpt>
+      <trkpt lat="57.983333" lon="13.533333">
+        <time>2019-07-20T12:00:00Z</time>
+        <name>Trädet</name>
+      </trkpt>
+      <trkpt lat="52.373056" lon="5.635278">
+        <time>2019-08-20T12:00:00Z</time>
+        <name>WeCamp</name>
+      </trkpt>
+      <trkpt lat="52.370197" lon="4.890444">
+        <time>2019-06-07T12:00:00Z</time>
+        <name>LaraCon</name>
+      </trkpt>    
     </trkseg>
   </trk>
 </gpx>
