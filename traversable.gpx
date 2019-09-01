@@ -41,9 +41,13 @@
         <name>WeCamp</name>
       </trkpt>
       <trkpt lat="52.370197" lon="4.890444">
-        <time>2019-06-07T12:00:00Z</time>
+        <time>2019-08-30T12:00:00Z</time>
         <name>LaraCon</name>
       </trkpt>    
+      <trkpt lat="45.255" lon="19.844722">
+        <time>2019-09-01T12:00:00Z</time>
+        <name>Novi Sad</name>
+      </trkpt> 
     </trkseg>
   </trk>
 </gpx>
