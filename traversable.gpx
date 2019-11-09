@@ -64,6 +64,10 @@
         <time>2019-10-25T12:00:00Z</time>
         <name>ForumPHP</name>
       </trkpt>
+      <trkpt lat="55.953" lon="-3.189">
+        <time>2019-11-09T12:00:00Z</time>
+        <name>PHPScotland</name>
+      </trkpt>
     </trkseg>
   </trk>
 </gpx>
